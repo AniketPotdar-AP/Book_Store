@@ -30,7 +30,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`max-w-screen-2xl container mx-auto md:px-20 px-2 fixed top-0 left-0 right-0 ${sticky ? "sticky-navbar shadow-md bg-base-100 duration-300 transition-all ease-in-out" : ""}`}>
+            <nav className={`max-w-screen-2xl container mx-auto md:px-20 z-50 fixed top-0 left-0 right-0 ${sticky ? "sticky-navbar shadow-md bg-base-100 duration-300 transition-all ease-in-out" : ""}`}>
                 <div className="navbar py-4">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -41,7 +41,7 @@ const Navbar = () => {
                                 {navItems}
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-4xl logo hover:bg-white">Book Store</a>
+                        <a className="btn btn-ghost text-4xl logo hover:bg-white">bookStore</a>
                     </div>
                     <div className="navbar-end">
                         <div className="navbar-center hidden lg:flex">
