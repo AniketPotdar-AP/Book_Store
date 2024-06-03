@@ -5,7 +5,7 @@
         "title": "Dive deep into Python programming with this comprehensive guide, covering everything from foundational concepts to advanced techniques and best practices. Perfect for beginners and seasoned developers alike.",
         "price": "$0",
         "category": "free",
-        "image": "../src/assets/freeBooks.png"
+        "image": "src/assets/freeBooks.png"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "title": "Dive deep into Javascript programming with this comprehensive guide, covering everything from foundational concepts to advanced techniques and best practices. Perfect for beginners developers alike.",
         "price": "$0",
         "category": "free",
-        "image": "../src/assets/freeBooks.png"
+        "image": "src/assets/freeBooks.png"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "title": "Start your journey into the world of Java programming with this beginner-friendly guide. Learn the basics, explore object-oriented programming, and build real-world applications with hands-on examples.",
         "price": "$0",
         "category": "free",
-        "image": "../src/assets/freeBooks.png"
+        "image": "src/assets/freeBooks.png"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "title": "Master C# programming with this detailed guide, featuring step-by-step tutorials on developing robust desktop and web applications. Ideal for both new and experienced programmers looking to enhance their skills.",
         "price": "$0",
         "category": "free",
-        "image": "../src/assets/freeBooks.png"
+        "image": "src/assets/freeBooks.png"
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "title": "Discover the elegance and efficiency of Ruby on Rails with this practical guide. Learn how to build dynamic web applications from scratch, leveraging the power of Ruby's simplicity and Rails' convention over configuration.",
         "price": "$0",
         "category": "free",
-        "image": "../src/assets/freeBooks.png"
+        "image": "src/assets/freeBooks.png"
     },
     {
         "id": 6,
@@ -45,6 +45,6 @@
         "title": "Explore the world of data science with this hands-on guide to R programming. From data manipulation to statistical analysis and machine learning, this book provides everything you need to become proficient in R.",
         "price": "$0",
         "category": "free",
-        "image": "../src/assets/freeBooks.png"
+        "image": "src/assets/freeBooks.png"
     }
 ]
