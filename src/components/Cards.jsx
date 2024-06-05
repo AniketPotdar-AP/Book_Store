@@ -7,7 +7,7 @@ const Cards = ({ item }) => {
                 <figure>
                     <img src={item.image} alt="Shoes" />
                 </figure>
-                <div className="card-body">
+                <div className="card-body ">
                     <h2 className="card-title">
                         {item.name}
                         <div className="badge badge-secondary">{item.category}</div>

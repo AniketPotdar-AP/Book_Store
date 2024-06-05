@@ -24,7 +24,7 @@ const FreeCourse = () => {
                     className="mySwiper mt-10 pb-14 "
                     loop={true}
                     pagination={{
-                        clickable: true,
+                        dynamicBullets: true,
                     }}
                     breakpoints={{
                         1300: {
@@ -42,7 +42,7 @@ const FreeCourse = () => {
                     }}
                 >
                     {filterData.map((item) => (
-                        <SwiperSlide key={item.id} className="flex justify-center items-center">
+                        <SwiperSlide key={item.id} className="flex justify-center items-center h-full">
                             <Cards item={item} />
                         </SwiperSlide>
                     ))}
