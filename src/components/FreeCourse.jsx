@@ -21,7 +21,7 @@ const FreeCourse = () => {
                 <Swiper
                     spaceBetween={30}
                     modules={[Pagination]}
-                    className="mySwiper mt-10 pb-14 "
+                    className="mySwiper mt-10 pb-14"
                     loop={true}
                     pagination={{
                         dynamicBullets: true,

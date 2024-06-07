@@ -21,10 +21,10 @@ const Navbar = () => {
 
     const navItems = (
         <>
-            <li><a className="font-semibold">Home</a></li>
-            <li><a className="font-semibold">Course</a></li>
-            <li><a className="font-semibold">Contact</a></li>
-            <li><a className="font-semibold">About</a></li>
+            <li><a href='/' className="font-semibold">Home</a></li>
+            <li><a href='/course' className="font-semibold">Course</a></li>
+            <li><a href='/contact' className="font-semibold">Contact</a></li>
+            <li><a href='/about' className="font-semibold">About</a></li>
         </>
     )
 
@@ -41,7 +41,7 @@ const Navbar = () => {
                                 {navItems}
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-4xl logo hover:bg-white">bookStore</a>
+                        <a href='/' className="btn btn-ghost text-4xl logo hover:bg-white">bookStore</a>
                     </div>
                     <div className="navbar-end">
                         <div className="navbar-center hidden lg:flex">
