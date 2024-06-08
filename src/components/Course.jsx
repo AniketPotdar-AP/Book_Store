@@ -2,6 +2,7 @@ import React from "react";
 import freeCourse from "../../public/freeCourses.json";
 import Cards from "./Cards";
 import "../styles/Course.css";
+import { Link } from "react-router-dom";
 
 const Course = () => {
   return (
@@ -19,9 +20,11 @@ const Course = () => {
             bookstore offers something for everyone. Let your next great read
             begin here!
           </p>
-          <button className="btn btn-sm px-6 mt-8 bg-pink-500 text-white hover:bg-pink-500">
-            Back
-          </button>
+          <Link to={"/"} >
+            <button className="btn btn-sm px-6 mt-8 bg-pink-500 text-white hover:bg-pink-500">
+              Back
+            </button>
+          </Link>
         </div>
       </div>
       <div className="mt-12 cards">
