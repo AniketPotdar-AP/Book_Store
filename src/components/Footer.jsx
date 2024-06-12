@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <>
             <hr className="mt-8" />
-            <footer className="footer footer-center p-10 text-base-content rounded">
+            <footer className="footer dark:text-white footer-center p-10 text-base-content rounded">
                 <nav className="grid grid-flow-col gap-4">
                     <a className="link link-hover">Home</a>
                     <a className="link link-hover">Course</a>

@@ -6,18 +6,22 @@ import About from './components/About'
 import Course from './components/Course'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Login from './components/Login'
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/course" element={<Course />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <Footer />
+      <div className='dark:bg-slate-800 dark:text-white'>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer />
+      </div>
     </>
   )
 }
