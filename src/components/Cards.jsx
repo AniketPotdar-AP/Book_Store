@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Cards.css'
 
 const Cards = ({ item }) => {
     return (
@@ -9,10 +10,10 @@ const Cards = ({ item }) => {
                 </figure>
                 <div className="card-body ">
                     <div className="badge badge-secondary">{item.category}</div>
-                    <h2 className="card-title">
+                    <h2 className="card-title truncate-2line">
                         {item.name}
                     </h2>
-                    <p>{item.title}</p>
+                    <p className="truncate-8line">{item.title}</p>
                     <div className="card-actions justify-between mt-2">
                         <div className="btn btn-sm  dark:bg-slate-800 dark:text-white bg-white border-2 border-black dark:border-white hover:border-black rounded-2xl hover:bg-white">
                             {item.price}
