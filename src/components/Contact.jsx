@@ -3,10 +3,10 @@ import React from "react";
 const Contact = () => {
     return (
         <>
-            <section className="max-w-screen-2xl dark:bg-slate-800 dark:text-white container mx-auto md:px-20 px-4">
+            <section className="max-w-screen-2xl dark:text-white container mx-auto md:px-20 px-4">
                 <div className="items-center pt-24 justify-center text-center">
-                    <section class="bg-white dark:bg-gray-900">
-                        <div class=" py-6 px-4 mx-auto max-w-screen-md">
+                    <section class=" rounded-2xl">
+                        <div class=" py-6 px-2 mx-auto max-w-screen-md">
                             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
                                 Contact Us
                             </h2>

@@ -39,12 +39,12 @@ const Login = () => {
                             <input type="password" placeholder="Password" className="grow" />
                         </label>
                     </p>
-
                     <p className='flex gap-6 flex-col items-center'>
                         <button className="btn btn-secondary mt-10">Login</button>
-                        <p>Not Registered? {" "}
+                        <button>Not Registered? {" "}
                             <Link to={'/signup'} className="cursor-pointer underline text-blue-600">Signup</Link>
-                        </p>
+                        </button>
+
                     </p>
                 </div>
             </dialog>
