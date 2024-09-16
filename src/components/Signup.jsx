@@ -1,11 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form"
+import '../styles/login.css'
 
 const Login = () => {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm()
+
+    const onSubmit = (data) => console.log(data)
+
     return (
         <section className="max-w-2xl dark:text-white container mx-auto md:px-20 px-4">
             <div className="items-center pt-24 justify-center text-center">
-                <section className="p-2 py-4 rounded-2xl">
+                <form onSubmit={handleSubmit(onSubmit)} className="p-2 py-4 rounded-2xl">
                     <h3 className="font-bold text-xl">Signup</h3>
                     <p className="mt-10 flex flex-col gap-6 text-black">
                         <label className="input input-bordered flex items-center gap-2">
@@ -19,8 +30,11 @@ const Login = () => {
                                 <path
                                     d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                             </svg>
-                            <input type="text" className="grow" placeholder="Enter Full name" />
+                            <input type="text" className="grow" placeholder="Enter Full name" {...register("name", { required: true })} />
                         </label>
+                        <span className="ml-2 error text-left">
+                            {errors.name && <span>Name is required</span>}
+                        </span>
 
                         <label className="input input-bordered flex items-center gap-2 mt-2">
                             <svg
@@ -33,8 +47,11 @@ const Login = () => {
                                 <path
                                     d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                             </svg>
-                            <input type="text" className="grow" placeholder="Email" />
+                            <input type="text" className="grow" placeholder="Email" {...register("email", { required: true })} />
                         </label>
+                        <span className="ml-2 error text-left">
+                            {errors.email && <span>Email is required</span>}
+                        </span>
 
                         <label className="input input-bordered flex items-center gap-2 mt-2">
                             <svg
@@ -47,8 +64,11 @@ const Login = () => {
                                     d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                     clipRule="evenodd" />
                             </svg>
-                            <input type="password" placeholder="Password" className="grow" />
+                            <input type="password" placeholder="Password" className="grow" {...register("password", { required: true })} />
                         </label>
+                        <span className="ml-2 error text-left">
+                            {errors.password && <span>Password is required</span>}
+                        </span>
                     </p>
 
                     <p className='flex gap-6 flex-col items-center'>
@@ -60,7 +80,7 @@ const Login = () => {
                         </span>
                     </p>
 
-                </section>
+                </form>
             </div>
         </section>
     );
