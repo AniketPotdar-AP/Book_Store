@@ -16,3 +16,16 @@ body {
 .btn-sm {
   height: 2.5rem;
 }
+
+::-webkit-scrollbar {
+  width: 0.65rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(236 72 153) !important;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #616161;
+}

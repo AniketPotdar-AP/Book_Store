@@ -5,17 +5,17 @@ const Contact = () => {
         <>
             <section className="max-w-screen-2xl text-black container mx-auto md:px-20 px-4">
                 <div className="items-center pt-24 justify-center text-center">
-                    <section class=" rounded-2xl">
-                        <div class=" py-6 px-2 mx-auto max-w-screen-md">
-                            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                    <section className=" rounded-2xl">
+                        <div className=" py-6 px-2 mx-auto max-w-screen-md">
+                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
                                 Contact Us
                             </h2>
-                            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+                            <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
                                 We're here to help with any questions or concerns you have,
                                 whether it's about finding a specific book, getting assistance
                                 with an order, or sharing your love for reading.{" "}
                             </p>
-                            <form action="#" class="space-y-8">
+                            <form action="#" className="space-y-8">
                                 <div>
                                     <label className="input input-bordered flex items-center gap-2">
                                         <svg
@@ -43,7 +43,7 @@ const Contact = () => {
                                         placeholder="Leave a comment"
                                     ></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-secondary">
+                                <button type="submit" className="btn btn-secondary">
                                     Contact US
                                 </button>
                             </form>

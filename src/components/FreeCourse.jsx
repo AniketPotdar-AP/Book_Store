@@ -1,7 +1,7 @@
 import React from "react";
 import freeCourse from "../../public/freeCourses.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import Cards from "./Cards";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,7 +20,11 @@ const FreeCourse = () => {
 
                 <Swiper
                     spaceBetween={30}
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
                     className="mySwiper mt-10 pb-14"
                     loop={true}
                     pagination={{
