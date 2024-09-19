@@ -16,7 +16,7 @@ const Cards = ({ item }) => {
                     <p className="truncate-8line">{item.title}</p>
                     <div className="card-actions justify-between mt-2">
                         <div className="btn btn-sm  dark:bg-slate-800 dark:text-white bg-white border-2 border-black dark:border-white hover:border-black rounded-2xl hover:bg-white">
-                            {item.price}
+                        ₹ {item.price || 0}
                         </div>
                         <div className=" btn btn-sm dark:bg-slate-800 dark:text-white bg-white hover:text-white  border-2 dark:border-white border-black rounded-2xl dark:hover:bg-pink-500 hover:bg-pink-500 duration-200">
                             Buy Now

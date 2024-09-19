@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import freeCourse from "../../public/freeCourses.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import Cards from "./Cards";
 import "swiper/css";
 import "swiper/css/pagination";
+import axios from "axios";
 
 const FreeCourse = () => {
-    const filterData = freeCourse.filter((data) => data.category === "free");
+    const [book, setBook] = useState([]);
+    useEffect(() => {
+        const getBook = async () => {
+            try {
+                const res = await axios.get(`https://book-store-backend-n1l8.onrender.com/getBooks`);
+                setBook(res.data);
+                console.log(res.data);
+
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getBook();
+    }, []);
+    const filterData = book.filter((data) => data.category === "free");
     return (
         <>
             <div className="max-w-screen-2xl container mx-auto px-6 md:px-20 mt-16">
@@ -46,7 +61,7 @@ const FreeCourse = () => {
                     }}
                 >
                     {filterData.map((item) => (
-                        <SwiperSlide key={item.id} className="flex justify-center items-center h-full">
+                        <SwiperSlide key={item._id} className="flex justify-center items-center h-full">
                             <Cards item={item} />
                         </SwiperSlide>
                     ))}
