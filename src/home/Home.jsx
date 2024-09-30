@@ -9,6 +9,6 @@ const home = () => {
       <FreeCourse />
     </>
   )
-}
+} 
 
 export default home
