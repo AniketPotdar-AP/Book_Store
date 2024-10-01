@@ -1,12 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
+import { useAuth } from "../context/AuthProvider";
 
 const Navbar = () => {
+    const [authUser, setAuthUser] = useAuth();
+
+    const handleLogout = () => {
+        try {
+            setAuthUser({
+                ...authUser,
+                user: null
+            })
+            localStorage.removeItem("User");
+            toast.success('Logged out Successful!');
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000)
+        } catch (error) {
+            toast.error("Something went wrong");
+            setTimeout(() => { }, 2000)
+        }
+    }
+
     const [sticky, setSticky] = useState(false);
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
     );
+
     const element = document.documentElement;
     useEffect(() => {
         if (theme === "dark") {
@@ -152,11 +173,22 @@ const Navbar = () => {
                             </label>
                         </div>
 
-
-                        <a className="btn btn-sm bg-black text-white hover:bg-slate-800"
-                            onClick={() => document.getElementById("my_modal_3").showModal()}>
-                            Login
-                        </a>
+                        {authUser ? (
+                            <a className="btn btn-sm bg-red-600 text-white hover:bg-red-700"
+                                onClick={handleLogout}
+                            >
+                                Logout
+                            </a>
+                        ) : (
+                            <a
+                                className="btn btn-sm bg-black text-white hover:bg-slate-800"
+                                onClick={() =>
+                                    document.getElementById("my_modal_3").showModal()
+                                }
+                            >
+                                Login
+                            </a>
+                        )}
                         <Login />
                     </div>
                 </div>

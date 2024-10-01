@@ -2,16 +2,37 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import '../styles/login.css'
+import axios from "axios";
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = async (data) => {
+        const userInfo = {
+            email: data.email,
+            password: data.password,
+        };
+        await axios
+            .post("https://book-store-backend-n1l8.onrender.com/login", userInfo)
+            .then((res) => {
+                if (res.data) {
+                    toast.success('Logged In Successful!');
+                    setTimeout(() => {
+                        document.getElementById("my_modal_3").close()
+                        window.location.reload()
+                        localStorage.setItem("User", JSON.stringify(res.data))
+                    }, 2000)
+                }
+            })
+            .catch((err) => {
+                toast.error(err.response.data.error);
+            });
+    }
     return (
         <>
             <dialog id="my_modal_3" className="modal">

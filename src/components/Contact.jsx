@@ -43,7 +43,7 @@ const Contact = () => {
                                         placeholder="Leave a comment"
                                     ></textarea>
                                 </div>
-                                <button type="submit" className="btn btn-secondary">
+                                <button type="button" className="btn btn-secondary">
                                     Contact US
                                 </button>
                             </form>

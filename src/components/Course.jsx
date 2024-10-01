@@ -10,10 +10,11 @@ const Course = () => {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get(`https://book-store-backend-n1l8.onrender.com/getBooks`);
+        const res = await axios.get(
+          `https://book-store-backend-n1l8.onrender.com/getBooks`
+        );
         setBook(res.data);
         console.log(res.data);
-        
       } catch (error) {
         console.log(error);
       }
