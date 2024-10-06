@@ -11,18 +11,18 @@ const Navbar = () => {
         try {
             setAuthUser({
                 ...authUser,
-                user: null
-            })
+                user: null,
+            });
             localStorage.removeItem("User");
-            toast.success('Logged out Successful!');
+            toast.success("Logged out Successful!");
             setTimeout(() => {
-                window.location.reload()
-            }, 2000)
+                window.location.reload();
+            }, 2000);
         } catch (error) {
             toast.error("Something went wrong");
-            setTimeout(() => { }, 2000)
+            setTimeout(() => { }, 2000);
         }
-    }
+    };
 
     const [sticky, setSticky] = useState(false);
     const [theme, setTheme] = useState(
@@ -78,8 +78,8 @@ const Navbar = () => {
         <>
             <nav
                 className={`max-w-screen-2xl dark:bg-slate-800 dark:text-white container mx-auto md:px-20 z-50 fixed top-0 left-0 right-0 ${sticky
-                    ? "sticky-navbar shadow-md bg-base-100 duration-300 transition-all ease-in-out"
-                    : ""
+                        ? "sticky-navbar shadow-md bg-base-100 duration-300 transition-all ease-in-out"
+                        : ""
                     }`}
             >
                 <div className="navbar py-4">
@@ -175,7 +175,8 @@ const Navbar = () => {
                         </div>
 
                         {authUser ? (
-                            <a className="btn btn-sm bg-red-600 text-white hover:bg-red-700"
+                            <a
+                                className="btn btn-sm bg-red-600 text-white hover:bg-red-700"
                                 onClick={handleLogout}
                             >
                                 Logout
@@ -187,7 +188,7 @@ const Navbar = () => {
                                     document.getElementById("my_modal_3").showModal()
                                 }
                             >
-                                Login
+                                <div>Login</div>
                             </a>
                         )}
                         <Login />
