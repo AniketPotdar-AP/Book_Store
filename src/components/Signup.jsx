@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "../styles/login.css";
@@ -6,9 +6,10 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const Login = () => {
-    const location = useLocation()
-    const navigate = useNavigate()
-    const from = location.state?.from?.pathname || '/'
+    const [loader, setLoader] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
 
     const {
         register,
@@ -18,6 +19,7 @@ const Login = () => {
     } = useForm();
 
     const onSubmit = async (data) => {
+        setLoader(true);
         const userInfo = {
             name: data.name,
             email: data.email,
@@ -26,15 +28,17 @@ const Login = () => {
         await axios
             .post("https://book-store-backend-n1l8.onrender.com/register", userInfo)
             .then((res) => {
-                console.log(res.data);
                 if (res.data) {
-                    toast.success('User registered successfully!');
-                    navigate(from, { replace: true })
+                    toast.success("User registered successfully!");
+                    setLoader(false);
+                    navigate(from, { replace: true });
                 }
-                localStorage.setItem("User", res.data)
+                localStorage.setItem("User", JSON.stringify(res.data));
+                window.location.reload();
             })
             .catch((err) => {
                 toast.error(err.response.data.error);
+                setLoader(false);
             });
     };
 
@@ -116,7 +120,16 @@ const Login = () => {
                     </p>
 
                     <p className="flex gap-6 flex-col items-center">
-                        <button type="submit" className="btn btn-secondary mt-10 px-6">Signup</button>
+                        {loader == true ? (
+                            <button type="submit" className="btn btn-secondary mt-10 w-24">
+                                <span className="loading loading-dots loading-md"></span>
+                            </button>
+                        ) : (
+                            <button type="submit" className="btn btn-secondary mt-10 w-24">
+                                Signup
+                            </button>
+                        )}
+
                         <span>
                             Have account?{" "}
                             <button
