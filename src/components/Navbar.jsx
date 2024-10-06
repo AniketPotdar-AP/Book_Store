@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
 import { useAuth } from "../context/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
     const [authUser, setAuthUser] = useAuth();
